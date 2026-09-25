@@ -16,8 +16,9 @@ public class PlayerScript : MonoBehaviour
     public InputAction crouchAction;
     public InputAction jumpAction;
     public InputAction interactAction;
-
-
+    public InputAction runAction;
+    public InputAction lookUpAction;
+    public InputAction attackAction;
 
     private void Start()
     {
@@ -32,8 +33,9 @@ public class PlayerScript : MonoBehaviour
         crouchAction = InputSystem.actions.FindAction("Crouch");
         interactAction = InputSystem.actions.FindAction("Interact");
         jumpAction = InputSystem.actions.FindAction("Jump");
-
-
+        runAction = InputSystem.actions.FindAction("Run");
+        lookUpAction = InputSystem.actions.FindAction("Look Up");
+        attackAction = InputSystem.actions.FindAction("Attack");
     }
 
     private void Update()
@@ -64,7 +66,6 @@ public class PlayerScript : MonoBehaviour
     {
         sm.currentState.OnTriggerExit2D(collision);
     }
-
 
 
 }

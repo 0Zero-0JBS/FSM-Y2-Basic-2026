@@ -12,7 +12,7 @@ public abstract class State
 
     public float verticalInput;
     public float horizontalInput;
-
+    public float mouseLeftClick;
 
     // base constructor
     public State(PlayerScript player, StateMachine sm)
@@ -38,11 +38,10 @@ public abstract class State
         Debug.Log(text);
     }
 
-
     public void ReadInput()
     {
-    }
 
+    }
 
 
 }

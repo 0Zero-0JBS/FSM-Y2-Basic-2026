@@ -8,7 +8,6 @@ public class JumpState : State
 {
     float rotationSpeed;
 
-    
     public JumpState(PlayerScript player, StateMachine sm) : base(player, sm)
     {
     }

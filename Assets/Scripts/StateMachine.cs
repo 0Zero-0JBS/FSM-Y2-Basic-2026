@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 
 //Handles initialisation of states, switching of states
@@ -12,7 +13,9 @@ public class StateMachine
     public IdleState idleState;
     public JumpState jumpState;
     public RunState runState;
-
+    public CrouchState crouchState;
+    public LookUpState lookUpState;
+    public AttackState attacksState;
 
     //constructor
     public StateMachine( PlayerScript player )
@@ -21,7 +24,9 @@ public class StateMachine
         idleState = new IdleState(player, this);
         jumpState = new JumpState(player, this);
         runState = new RunState(player, this);
-
+        crouchState = new CrouchState(player, this);
+        lookUpState = new LookUpState(player, this);
+        attacksState = new AttackState(player, this);
     }
 
     public void Init(State startingState)
