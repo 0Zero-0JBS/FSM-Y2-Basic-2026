@@ -13,11 +13,11 @@ public class PlayerScript : MonoBehaviour
 
     //define the actions
     public InputAction moveAction;
-    public InputAction crouchAction;
+    public InputAction dieAction;
     public InputAction jumpAction;
     public InputAction interactAction;
     public InputAction runAction;
-    public InputAction lookUpAction;
+    public InputAction hurtAction;
     public InputAction attackAction;
 
     private void Start()
@@ -30,11 +30,11 @@ public class PlayerScript : MonoBehaviour
 
         //initialise the actions
         moveAction = InputSystem.actions.FindAction("Move");
-        crouchAction = InputSystem.actions.FindAction("Crouch");
+        dieAction = InputSystem.actions.FindAction("Die");
         interactAction = InputSystem.actions.FindAction("Interact");
         jumpAction = InputSystem.actions.FindAction("Jump");
         runAction = InputSystem.actions.FindAction("Run");
-        lookUpAction = InputSystem.actions.FindAction("Look Up");
+        hurtAction = InputSystem.actions.FindAction("Die");
         attackAction = InputSystem.actions.FindAction("Attack");
     }
 
@@ -66,6 +66,5 @@ public class PlayerScript : MonoBehaviour
     {
         sm.currentState.OnTriggerExit2D(collision);
     }
-
 
 }
