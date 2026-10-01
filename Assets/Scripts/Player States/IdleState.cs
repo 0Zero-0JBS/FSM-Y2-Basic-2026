@@ -15,6 +15,8 @@ public class IdleState : State
     public override void Enter()
     {
         // this method is called when the state begins
+        base.Enter();
+        player.rb.linearVelocity = new Vector2(0, player.rb.linearVelocity.y);
 
         Debug.Log("entering idle state");
         player.sr.color = new Color(0.5f, 0.8f, 0.7f);
@@ -42,30 +44,51 @@ public class IdleState : State
             sm.ChangeState(sm.jumpState);
         }
 
+        if (player.attackAction.IsPressed())
+        {
+            sm.ChangeState(sm.attackState);
+        }
 
         //example of running a coroutine from a state and not directly from the monobehaviour
-        if (player.crouchAction.IsPressed())
-        {
-            player.StartCoroutine( IdleCo() );
-        }
+        
 
         UIscript.ui.DrawText("*** This is the idle state ***\n");
         UIscript.ui.DrawText("Space = Jump State");
         UIscript.ui.DrawText("Left/Right arrows = Move State");
         UIscript.ui.DrawText("C = Start the coroutine");
+        UIscript.ui.DrawText("Left Click = Attack state");
 
 
+    }
+    public override void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("collided in idlestate");
+
+        if (collision.tag == "enemy")
+        {
+            collision.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0);
+        }
+    }
+
+    public override void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("exit collision in idlestate");
+
+        if (collision.tag == "enemy")
+        {
+            collision.GetComponent<SpriteRenderer>().color = new Color(0.1f, 0.1f, 0.1f);
+        }
     }
 
     public override void FixedUpdate()
     {
+        base.FixedUpdate();
     }
 
     public override void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("collided");
     }
-
 
     public IEnumerator IdleCo()
     {
@@ -82,8 +105,6 @@ public class IdleState : State
         }
         yield break;
     }
-
-
 
 
 }

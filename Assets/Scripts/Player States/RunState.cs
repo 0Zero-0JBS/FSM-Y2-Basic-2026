@@ -7,7 +7,6 @@ using UnityEngine;
 public class RunState : State
 {
     protected float speed;
-    protected float rotationSpeed;
 
     public RunState(PlayerScript player, StateMachine sm) : base(player, sm)
     {
@@ -17,7 +16,8 @@ public class RunState : State
     {
         speed = 3;
         base.Enter();
-        horizontalInput = verticalInput = 0.0f;
+        horizontalInput = 0.0f;
+
 
         Debug.Log("entering running state");
 
@@ -26,6 +26,8 @@ public class RunState : State
 
     public override void Exit()
     {
+        Debug.Log("exiting run state");
+
         base.Exit();
     }
 
@@ -35,19 +37,24 @@ public class RunState : State
     {
 
         TestMethod("hello");
-
-        
-
         ReadInput();
 
-        if (player.interactAction.IsPressed())
+        Vector2 moveInput = player.moveAction.ReadValue<Vector2>();
+
+        if (moveInput.magnitude <= 0.01f)
         {
+            player.rb.linearVelocity = Vector2.zero;
             sm.ChangeState(sm.idleState);
         }
 
         if (player.jumpAction.IsPressed())
         {
             sm.ChangeState(sm.jumpState);
+        }
+
+        if (player.attackAction.IsPressed())
+        {
+            sm.ChangeState(sm.attackState);
         }
 
         //debug move gameObject
@@ -58,6 +65,7 @@ public class RunState : State
         UIscript.ui.DrawText("Left/Right arrows = Move Sprite");
         UIscript.ui.DrawText("E = Idle State");
         UIscript.ui.DrawText("Space = Jump state");
+        UIscript.ui.DrawText("Left Click = Attack state");
 
 
 
@@ -72,6 +80,7 @@ public class RunState : State
             collision.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0);
         }
     }
+
     public override void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log("exit collision in runstate");
@@ -82,9 +91,8 @@ public class RunState : State
         }
     }
 
-
-
     public override void FixedUpdate()
     {
+        base.FixedUpdate();
     }
 }

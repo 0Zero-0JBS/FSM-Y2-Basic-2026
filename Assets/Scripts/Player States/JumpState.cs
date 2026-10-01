@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class JumpState : State
 {
-    float rotationSpeed;
+    protected float jumpForce;
 
     public JumpState(PlayerScript player, StateMachine sm) : base(player, sm)
     {
@@ -14,14 +14,21 @@ public class JumpState : State
 
     public override void Enter()
     {
+        jumpForce = 3;
+        base.Enter();
+        verticalInput = 0.0f;
+
         Debug.Log("entering jumping state");
 
+        
         player.sr.color = new Color(0.8f, 0.3f, 0.4f);  //change the sprite colour
     }
 
     public override void Exit()
     {
-        //exit the jump state
+        Debug.Log("exiting jump state");
+
+        base.Exit();//exit the jump state
     }
 
     public override void Update()
@@ -39,15 +46,41 @@ public class JumpState : State
             sm.ChangeState(sm.runState);
         }
 
+        if (player.attackAction.IsPressed())
+        {
+            sm.ChangeState(sm.attackState);
+        }
+
         UIscript.ui.DrawText("*** This is the jumping state ***\n");
         UIscript.ui.DrawText("Left/Right arrows = Move State");
         UIscript.ui.DrawText("E = Idle State");
+        UIscript.ui.DrawText("Space = Jump state");
+        UIscript.ui.DrawText("Left Click = Attack state");
 
+    }
 
+    public override void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("collided in jumpstate");
+
+        if (collision.tag == "enemy")
+        {
+            collision.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0);
+        }
+    }
+
+    public override void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("exit collision in jumpstate");
+
+        if (collision.tag == "enemy")
+        {
+            collision.GetComponent<SpriteRenderer>().color = new Color(0.1f, 0.1f, 0.1f);
+        }
     }
 
     public override void FixedUpdate()
     {
-        //Fixed Update 
+        base.FixedUpdate();//Fixed Update 
     }
 }

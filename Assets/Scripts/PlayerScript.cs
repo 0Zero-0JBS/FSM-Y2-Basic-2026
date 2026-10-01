@@ -9,6 +9,11 @@ public class PlayerScript : MonoBehaviour
 {
     public SpriteRenderer sr;
     public Rigidbody2D rb;
+    public Animator anim;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+    public Vector2 checkRadius = new Vector2(0.5f, 0.1f);
+    public bool isGrounded;
     StateMachine sm;
 
     //define the actions
@@ -19,6 +24,7 @@ public class PlayerScript : MonoBehaviour
     public InputAction runAction;
     public InputAction hurtAction;
     public InputAction attackAction;
+    public InputAction idleAction;
 
     private void Start()
     {
@@ -34,8 +40,9 @@ public class PlayerScript : MonoBehaviour
         interactAction = InputSystem.actions.FindAction("Interact");
         jumpAction = InputSystem.actions.FindAction("Jump");
         runAction = InputSystem.actions.FindAction("Run");
-        hurtAction = InputSystem.actions.FindAction("Die");
+        hurtAction = InputSystem.actions.FindAction("Hurt");
         attackAction = InputSystem.actions.FindAction("Attack");
+        idleAction = InputSystem.actions.FindAction("Idle");
     }
 
     private void Update()
@@ -44,7 +51,6 @@ public class PlayerScript : MonoBehaviour
         sm.Update();
 
         UIscript.ui.DrawText("Current state= " + sm.currentState + "  Last state= " + sm.lastState);
-
     }
 
     private void FixedUpdate()

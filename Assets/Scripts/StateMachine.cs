@@ -16,7 +16,7 @@ public class StateMachine
     public RunState runState;
     public DeadState deadState;
     public HurtState deathState;
-    public AttackState attacksState;
+    public AttackState attackState;
 
     //constructor
     public StateMachine( PlayerScript player )
@@ -27,7 +27,7 @@ public class StateMachine
         runState = new RunState(player, this);
         deadState = new DeadState(player, this);
         deathState = new HurtState(player, this);
-        attacksState = new AttackState(player, this);
+        attackState = new AttackState(player, this);
     }
 
     public void Init(State startingState)

@@ -501,8 +501,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7894fa3dcd145649a1994eaeacd2df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
-  sr: {fileID: 0}
-  rb: {fileID: 0}
+  sr: {fileID: 796294779}
+  rb: {fileID: 796294776}
+  anim: {fileID: 0}
+  groundCheck: {fileID: 636921761}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  checkRadius: {x: 0.5, y: 0.1}
+  isGrounded: 0
   moveAction:
     m_Name: Move
     m_Type: 0
@@ -513,11 +520,11 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
     m_Priority: 0
-  crouchAction:
-    m_Name: Crouch
+  dieAction:
+    m_Name: Die
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 0633d689-b924-4d8f-b461-d7d44bd6b72b
+    m_Id: 1bb0935c-f016-472e-a432-4fcfc84e5000
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -568,6 +575,16 @@ MonoBehaviour:
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: b918be8c-8308-4dcb-99f8-5915117915e5
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+    m_Priority: 0
+  idleAction:
+    m_Name: Idle
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 17dd31a6-4de8-4200-96e6-4ad54e197caf
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []

@@ -918,28 +918,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2D-Fantasy-Knight-Free-Sprite-Sheets2 (1)_30
-      rect:
-        serializedVersion: 2
-        x: 1114
-        y: 648
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52028953f45d17c40800000000000000
-      internalID: 5508418355429122085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 22 2D-Fantasy-Knight-Free-Sprite-Sheets2 22
       rect:
         serializedVersion: 2
@@ -1119,7 +1097,7 @@ TextureImporter:
       name: 29 2D-Fantasy-Knight-Free-Sprite-Sheets2 29
       rect:
         serializedVersion: 2
-        x: 30
+        x: 4
         y: 318
         width: 170
         height: 124
@@ -1163,9 +1141,9 @@ TextureImporter:
       name: 31 2D-Fantasy-Knight-Free-Sprite-Sheets2 31
       rect:
         serializedVersion: 2
-        x: 350
+        x: 340
         y: 320
-        width: 148
+        width: 156
         height: 116
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1185,9 +1163,9 @@ TextureImporter:
       name: 32 2D-Fantasy-Knight-Free-Sprite-Sheets2 32
       rect:
         serializedVersion: 2
-        x: 503
+        x: 496
         y: 321
-        width: 140
+        width: 147
         height: 117
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1251,9 +1229,9 @@ TextureImporter:
       name: 36 2D-Fantasy-Knight-Free-Sprite-Sheets2 36
       rect:
         serializedVersion: 2
-        x: 30
+        x: 3
         y: 180
-        width: 166
+        width: 161
         height: 124
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1273,9 +1251,9 @@ TextureImporter:
       name: 37 2D-Fantasy-Knight-Free-Sprite-Sheets2 (1)_56
       rect:
         serializedVersion: 2
-        x: 206
+        x: 166
         y: 182
-        width: 152
+        width: 154
         height: 122
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1295,9 +1273,9 @@ TextureImporter:
       name: 38 2D-Fantasy-Knight-Free-Sprite-Sheets2 (1)_57
       rect:
         serializedVersion: 2
-        x: 366
+        x: 321
         y: 180
-        width: 141
+        width: 149
         height: 122
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1405,9 +1383,9 @@ TextureImporter:
       name: 43 2D-Fantasy-Knight-Free-Sprite-Sheets2 (1)_62
       rect:
         serializedVersion: 2
-        x: 25
+        x: 3
         y: 48
-        width: 159
+        width: 164
         height: 130
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1427,9 +1405,9 @@ TextureImporter:
       name: 46 2D-Fantasy-Knight-Free-Sprite-Sheets2 (1)_69
       rect:
         serializedVersion: 2
-        x: 498
+        x: 494
         y: 32
-        width: 147
+        width: 167
         height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1449,9 +1427,9 @@ TextureImporter:
       name: 47 2D-Fantasy-Knight-Free-Sprite-Sheets2 (1)_70
       rect:
         serializedVersion: 2
-        x: 651
+        x: 670
         y: 32
-        width: 165
+        width: 178
         height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1471,9 +1449,9 @@ TextureImporter:
       name: 48 2D-Fantasy-Knight-Free-Sprite-Sheets2 (1)_71
       rect:
         serializedVersion: 2
-        x: 824
+        x: 851
         y: 25
-        width: 169
+        width: 176
         height: 87
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1493,9 +1471,9 @@ TextureImporter:
       name: 49 2D-Fantasy-Knight-Free-Sprite-Sheets2 (1)_73
       rect:
         serializedVersion: 2
-        x: 994
+        x: 1026
         y: 16
-        width: 172
+        width: 171
         height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1515,9 +1493,9 @@ TextureImporter:
       name: 30 2D-Fantasy-Knight-Free-Sprite-Sheets2 30
       rect:
         serializedVersion: 2
-        x: 201
+        x: 174
         y: 320
-        width: 150
+        width: 165
         height: 121
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1537,9 +1515,9 @@ TextureImporter:
       name: 44 2D-Fantasy-Knight-Free-Sprite-Sheets2 (1)_77
       rect:
         serializedVersion: 2
-        x: 184
+        x: 167
         y: 48
-        width: 159
+        width: 164
         height: 130
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1559,9 +1537,9 @@ TextureImporter:
       name: 45 2D-Fantasy-Knight-Free-Sprite-Sheets2 (1)_78
       rect:
         serializedVersion: 2
-        x: 343
+        x: 331
         y: 48
-        width: 146
+        width: 158
         height: 129
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
