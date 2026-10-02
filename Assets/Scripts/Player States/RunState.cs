@@ -14,6 +14,7 @@ public class RunState : State
 
     public override void Enter()
     {
+        player.anim.SetBool("isRunning", true);
         speed = 3;
         base.Enter();
         horizontalInput = 0.0f;
@@ -26,6 +27,7 @@ public class RunState : State
 
     public override void Exit()
     {
+        player.anim.SetBool("isRunning", false);
         Debug.Log("exiting run state");
 
         base.Exit();

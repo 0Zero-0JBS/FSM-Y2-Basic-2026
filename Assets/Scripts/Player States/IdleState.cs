@@ -16,7 +16,7 @@ public class IdleState : State
     {
         // this method is called when the state begins
         base.Enter();
-        player.rb.linearVelocity = new Vector2(0, player.rb.linearVelocity.y);
+        
 
         Debug.Log("entering idle state");
         player.sr.color = new Color(0.5f, 0.8f, 0.7f);

@@ -11,6 +11,7 @@ public class AttackState : State
 
     public override void Enter()
     {
+        player.anim.SetBool("isAttacking", true);
         attackSpeed = 3;
         attackDamage = 1;
         base.Enter();
@@ -22,6 +23,7 @@ public class AttackState : State
 
     public override void Exit()
     {
+        player.anim.SetBool("isAttacking", false);
         Debug.Log("exiting attack state");
 
         base.Exit();
@@ -39,9 +41,12 @@ public class AttackState : State
             sm.ChangeState(sm.jumpState);
         }
 
-        if (player.attackAction.IsPressed())
+        Vector2 attackInput = player.moveAction.ReadValue<Vector2>();
+
+        if (attackInput.magnitude <= 0.01f)
         {
-            sm.ChangeState(sm.attackState);
+            player.rb.linearVelocity = Vector2.zero;
+            sm.ChangeState(sm.idleState);
         }
 
 

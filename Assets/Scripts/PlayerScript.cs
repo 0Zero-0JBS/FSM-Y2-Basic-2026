@@ -16,6 +16,10 @@ public class PlayerScript : MonoBehaviour
     public bool isGrounded;
     StateMachine sm;
 
+    public bool isRunning;
+    public bool isJumping;
+    public bool isAttack;
+
     //define the actions
     public InputAction moveAction;
     public InputAction dieAction;

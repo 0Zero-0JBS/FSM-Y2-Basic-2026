@@ -14,18 +14,20 @@ public class JumpState : State
 
     public override void Enter()
     {
+        player.anim.SetBool("isJumping", true);
         jumpForce = 3;
         base.Enter();
         verticalInput = 0.0f;
+        player.rb.linearVelocity = new Vector2(0, player.rb.linearVelocity.y);
 
         Debug.Log("entering jumping state");
 
-        
         player.sr.color = new Color(0.8f, 0.3f, 0.4f);  //change the sprite colour
     }
 
     public override void Exit()
     {
+        player.anim.SetBool("isJumping", false);
         Debug.Log("exiting jump state");
 
         base.Exit();//exit the jump state
@@ -35,10 +37,12 @@ public class JumpState : State
     {
         ReadInput();
 
-        if (player.interactAction.IsPressed())
-        {
-            sm.ChangeState(sm.idleState);
+        Vector2 jumpInput = player.moveAction.ReadValue<Vector2>();
 
+        if (jumpInput.magnitude <= 0.01f)
+        {
+            player.rb.linearVelocity = Vector2.zero;
+            sm.ChangeState(sm.idleState);
         }
 
         if (player.moveAction.ReadValue<Vector2>().magnitude > 0.1f )
